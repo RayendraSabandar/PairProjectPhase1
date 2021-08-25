@@ -1,0 +1,16 @@
+sequelize init
+sequelize db:create
+sequelize model:generate --name User --attributes first_name:string,last_name:string,dob:date,problems:string,username:string,password:string
+sequelize model:generate --name Provider --attributes first_name:string,last_name:string,address:string,website:string,instagram:string,serviceProvided:string,username:string,password:string
+sequelize model:generate --name Appointment --attributes appointment:date
+sequelize migration:generate --name add-column-userid-to-Appointment
+sequelize migration:generate --name add-column-providerid-to-Appointment
+sequelize db:migrate
+sequelize db:migrate:undo:all
+sequelize db:seed:all
+sequelize db:seed:undo:all
+
+Tambahan
+sequelize model:generate --name Services --attributes service_name:string
+sequelize migration:generate --name remove-column-service-provided-from-Providers
+sequelize migration:generate --name add-column-SpId-to-Provider
