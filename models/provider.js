@@ -16,18 +16,16 @@ module.exports = (sequelize, DataTypes) => {
           through: "Appointment"
         }
       )
-      Provider.belongsTo(models.User)
     }
   };
   Provider.init({
     first_name: DataTypes.STRING,
     last_name: DataTypes.STRING,
     address: DataTypes.STRING,
-    website: DataTypes.STRING,
-    instagram: DataTypes.STRING,
-    serviceProvided: DataTypes.STRING,
-    username: DataTypes.STRING,
-    password: DataTypes.STRING
+    email: DataTypes.STRING,
+    phone_number: DataTypes.STRING,
+    service_provided: DataTypes.STRING,
+    price: DataTypes.INTEGER,
   }, {
     sequelize,
     modelName: 'Provider',

@@ -3,7 +3,7 @@ const userRouter = require('./userRouter')
 const providerRouter = require('./providerRouter')
 
 router.get('/', (req, res) => {
-    res.render('masukinFileEJS')
+    res.send('masukinFileEJS')
 })
 
 router.use('/users', userRouter)
