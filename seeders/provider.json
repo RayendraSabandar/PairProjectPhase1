@@ -3,90 +3,121 @@
         "first_name": "Tiana",
         "last_name" : "Susanti",
         "email" : "tiana@mail.com",
-        "service_provided" : "konsultasi akademik"
+        "phone_number": "098764348595",
+        "service_provided" : "Akademik",
+        "price": 500000
     },
     {
         "first_name": "Budi",
         "last_name" : "Hartono",
         "email" : "budibudi@mail.com",
-        "service_provided" : "konsultasi percintaan"
+        "phone_number": "098764348595",
+        "service_provided" : "Percintaan",
+        "price": 500000
     },
     {
         "first_name": "Gresia",
         "last_name" : "Polli",
         "email" : "polidisini@mail.com",
-        "service_provided" : "konsultasi bakat"
+        "phone_number": "098767848595",
+        "service_provided" : "Bakat",
+        "price": 500000
     },
     {
         "first_name": "Putri",
         "last_name" : "Titian",
         "email" : "p03tri@mail.com",
-        "service_provided" : "konsultasi perkembangan anak"
+        "phone_number": "098764348595",
+        "service_provided" : "Perkembangan Anak",
+        "price": 500000
     },
     {
         "first_name": "Hendra",
         "last_name" : "Kusuma",
         "email" : "Henkus@mail.com",
-        "service_provided" : "konsultasi keluarga"
+        "phone_number": "098764348595",
+        "service_provided" : "Keluarga",
+        "price": 500000
     },
     {
         "first_name": "Rahmawati",
         "last_name" : "Rahma",
         "email" : "rara@mail.com",
-        "service_provided" : "konsultasi perkembangan anak"
+        "phone_number": "098764348595",
+        "service_provided" : "Perkembangan Anak",
+        "price": 500000
     },
     {
         "first_name": "Fitri",
         "last_name" : "Atika",
         "email" : "fitri@mail.com",
-        "service_provided" : "konsultasi oercintaan"
+        "phone_number": "098764348595",
+        "service_provided" : "Percintaan",
+        "price": 500000
     },
     {
         "first_name": "Dea",
         "last_name" : "Dei",
         "email" : "dda@mail.com",
-        "service_provided" : "konsultasi bakat"
+        "phone_number": "098764348595",
+        "service_provided" : "Bakat",
+        "price": 500000
     },
     {
         "first_name": "Rudi",
         "last_name" : "Putra",
         "email" : "putrudia@mail.com",
-        "service_provided" : "konsultasi keluarga"
+        "phone_number": "098764348595",
+        "service_provided" : "Keluarga",
+        "price": 500000
     },
     {
         "first_name": "Tommy",
         "last_name" : "Prabowo",
         "email" : "tommy@mail.com",
-        "service_provided" : "konsultasi bakat"
+        "phone_number": "098764348595",
+        "service_provided" : "Bakat",
+        "price": 500000
     },
     {
         "first_name": "Cinta",
         "last_name" : "Maura",
         "email" : "cincin@mail.com",
-        "service_provided" : "konsultasi percintaan"
+        "phone_number": "098764348595",
+        "service_provided" : "Percintaan",
+        "price": 500000
     },
     {
         "first_name": "Yulita",
         "last_name" : "Sari",
         "email" : "Yulsa@mail.com",
-        "service_provided" : "konsultasi perkembangan anak"
+        "phone_number": "098764348595",
+        "service_provided" : "Perkembangan Anak",
+        "price": 500000
     },
     {
         "first_name": "Handri",
         "last_name" : "Ivan",
         "email" : "ivan@mail.com",
-        "service_provided" : "konsultasi bakat"
+        "phone_number": "098764348595",
+        "service_provided" : "Bakat",
+        "price": 500000
     },
     {
         "first_name": "Sena",
         "last_name" : "Susanto",
         "email" : "bukanpenjaggal@mail.com",
-        "service_provided" : "konsultasi keluarga"
+        "phone_number": "098764348595",
+        "service_provided" : "Keluarga",
+        "price": 500000
+
     },
     {
         "first_name": "Helvi",
         "last_name" : "Xiu",
         "email" : "xiu@mail.com",
-        "service_provided" : "konsultasi masalah akademik"
+        "phone_number": "0873642974084",
+        "service_provided" : "Akademik",
+        "price": 500000
     }
 ]

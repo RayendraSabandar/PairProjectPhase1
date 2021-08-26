@@ -21,7 +21,6 @@ module.exports = (sequelize, DataTypes) => {
   Provider.init({
     first_name: DataTypes.STRING,
     last_name: DataTypes.STRING,
-    address: DataTypes.STRING,
     email: DataTypes.STRING,
     phone_number: DataTypes.STRING,
     service_provided: DataTypes.STRING,

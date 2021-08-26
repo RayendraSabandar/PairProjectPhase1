@@ -20,11 +20,49 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   User.init({
-    first_name: DataTypes.STRING,
-    last_name: DataTypes.STRING,
-    dob: DataTypes.DATE,
-    email: DataTypes.STRING,
-    password: DataTypes.STRING,
+    first_name: {
+      type: DataTypes.STRING,
+      validate : {
+        notEmpty : {
+          msg : 'Must enter your first name'
+        }
+      }
+    },
+    last_name: {
+      type: DataTypes.STRING,
+      validate : {
+        notEmpty : {
+          msg : 'Must enter your last name'
+        }
+      }
+    },
+    dob: {
+      type : DataTypes.DATE,
+      validate : {
+        notEmpty : {
+          msg : `Must enter your birthdate`
+        }
+      }
+    },
+    email: {
+      type : DataTypes.STRING,
+      validate : {
+        notEmpty : {
+          msg : `Must enter an email address`
+        }
+      },
+      unique : {
+        msg : `Email is already registered! Use another email address`
+      }
+    },
+    password: {
+      type : DataTypes.STRING,
+      validate : {
+        notEmpty : {
+          msg : `Must enter a password`
+        }
+      }
+    },
   }, {
     hooks: {
       beforeCreate: (instance, options) => {

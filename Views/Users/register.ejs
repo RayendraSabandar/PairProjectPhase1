@@ -33,6 +33,10 @@
         <div class="form-group">
           <label for="exampleInputPassword1">Password</label>
           <input name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+          <large id="emailHelp" class="form-text text-muted">suggestion<br> 
+                <% suggestion.forEach(el => { %> 
+                    <%= el %><br> 
+                <% }) %> </large>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>

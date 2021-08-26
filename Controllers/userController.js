@@ -1,4 +1,6 @@
-const {User} = require('../models')
+const {User, Provider} = require('../models')
+const {checkPassword} = require('../helpers/bcrypt')
+const { generatePassword } = require('../helpers/generatePassword')
 
 class user {
     static home(req,res){
@@ -6,14 +8,34 @@ class user {
     }
 
     static login(req,res){
-        req.session.isLogin = true
-        req.session.email = 'test@gmail.com'
-        res.send('logged in succesfully')
+        res.render('./users/login')
+    }
+    static postLogin(req,res){
+        let {email, password} = req.body
+        User.findOne({
+            where: {email,}
+        })
+        .then(data => {
+            if(data){
+                let checking = checkPassword(password, data.password)
+                if(checking){
+                    req.session.isLogin = true
+                    req.session.email = data.email
+                    req.session.userId = data.id
+                    res.redirect('/users/getHelp')
+                } else {
+                    res.send('incorrect password')
+                }
+            } else {
+                res.send('invalid email')
+            }
+        })
+        .catch(err => res.send(err))
     }
 
     static register(req,res){
-        res.render('./users/register.ejs')
-    
+        let suggestion = generatePassword()
+        res.render('./users/register.ejs', {suggestion})
     }
     
     static postRegister(req,res){
@@ -27,12 +49,17 @@ class user {
             password,
         })
         .then(data => res.redirect('/users/login'))
-        .catch(err => res.send(err))
+        .catch(err => res.send(err.message))
     }
 
     static getHelp(req, res){
         if(req.session.isLogin){
-            res.send('getHelp')
+            Provider
+            .findAll()
+            .then(data => {
+                // res.send(data)
+                res.render('./users/getHelp.ejs', {data})
+            })
         } else {
             res.redirect('/users/login')
         }
@@ -41,6 +68,10 @@ class user {
     static showPsychologist(req, res){
         res.send('showPsyc')
     
+    }
+
+    static makeAppointment(req, res){
+        res.send('make appointment')
     }
 
     static showAppointments(req, res){
