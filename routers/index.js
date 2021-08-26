@@ -1,12 +1,10 @@
 const router = require('express').Router()
 const userRouter = require('./userRouter')
-const providerRouter = require('./providerRouter')
 
 router.get('/', (req, res) => {
-    res.send('masukinFileEJS')
+    res.render('./Home/home.ejs')
 })
 
 router.use('/users', userRouter)
-router.use('/providers', providerRouter)
 
 module.exports = router

@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       User.belongsToMany(models.Provider, 
         {
-          through: "Appointments"
+          through: "Appointment"
         }
       )
     }

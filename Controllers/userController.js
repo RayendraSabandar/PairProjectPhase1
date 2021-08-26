@@ -1,10 +1,10 @@
-const {User, Provider} = require('../models')
+const {User, Provider, Appointment} = require('../models')
 const {checkPassword} = require('../helpers/bcrypt')
 const { generatePassword } = require('../helpers/generatePassword')
 
 class user {
     static home(req,res){
-        res.send(req.session.id)
+        res.render('./users/home.ejs')
     }
 
     static login(req,res){
@@ -30,7 +30,7 @@ class user {
                 res.send('invalid email')
             }
         })
-        .catch(err => res.send(err))
+        .catch(err => res.send(err.message))
     }
 
     static register(req,res){
@@ -66,16 +66,69 @@ class user {
     }
 
     static showPsychologist(req, res){
-        res.send('showPsyc')
-    
+        const params = req.params.service_provided
+        Provider.findAll({
+            where: 
+            { 
+                service_provided: params 
+            }
+        }, 
+        )
+        .then(data => {
+            res.render('users/getHelpByService.ejs', {data})
+        })
+        .catch(err => res.send(err.message))
     }
 
     static makeAppointment(req, res){
-        res.send('make appointment')
+        let id = req.params.providerId
+        Provider
+        .findAll({
+            where : {
+                id,
+            }
+        })
+        .then(data => {
+            res.render('./users/makeAppointment.ejs', {data: data[0]})
+        })
+    }
+
+    static postMakeAppointment(req, res){
+        let fullDate = req.body.date.split('-')
+        let year = fullDate[0]
+        let month = fullDate[1]
+        let date = fullDate[2]
+
+        let fullTime = req.body.time.split(':')
+        let hours = fullTime[0]
+        let minutes = fullTime[1]
+        
+        Appointment
+        .create({
+            appointment :new Date(year, month, date, hours, minutes),
+            UserId : req.session.userId,
+            ProviderId : req.params.providerId
+        })
+        .then(data => {
+            res.redirect('/users/getHelp')
+        })
     }
 
     static showAppointments(req, res){
-        res.send('showApp')
+        let id = req.session.userId;
+        User
+        .findByPk(id,{
+            include : [{
+                model : Provider
+            }]
+        })
+        .then(data => {
+            // res.send(data)
+            res.render('Appointments/show.ejs', {data,})
+        })
+        .catch(err => {
+            res.send(err)
+        })
     }
 
     static logout(req,res){
