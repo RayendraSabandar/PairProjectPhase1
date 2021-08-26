@@ -16,6 +16,7 @@ module.exports = (sequelize, DataTypes) => {
           through: "Appointment"
         }
       )
+      User.belongsTo(models.Provider)
     }
   };
   User.init({

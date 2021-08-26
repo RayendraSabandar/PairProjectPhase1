@@ -14,23 +14,17 @@ module.exports = {
       last_name: {
         type: Sequelize.STRING
       },
-      address: {
+      email: {
         type: Sequelize.STRING
       },
-      website: {
+      phone_number: {
         type: Sequelize.STRING
       },
-      instagram: {
+      service_provided: { 
         type: Sequelize.STRING
       },
-      serviceProvided: {
-        type: Sequelize.STRING
-      },
-      username: {
-        type: Sequelize.STRING
-      },
-      password: {
-        type: Sequelize.STRING
+      price: {
+        type: Sequelize.INTEGER
       },
       createdAt: {
         allowNull: false,

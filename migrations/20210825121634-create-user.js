@@ -17,9 +17,6 @@ module.exports = {
       dob: {
         type: Sequelize.DATE
       },
-      problems: {
-        type: Sequelize.STRING
-      },
       username: {
         type: Sequelize.STRING
       },
